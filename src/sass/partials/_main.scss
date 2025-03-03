@@ -1,0 +1,16 @@
+html{
+  color: white;
+}
+body{
+  margin: 0;
+  background-color: black;
+}
+#pages {
+  > * {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}

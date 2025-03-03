@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>X-MUSIC</title>
+</head>
+<body>
+    <div class="">
+        <div class="header__wrapper">
+            <div class="header__img__wrapper">
+                <img class="header__img" src="images/background.jpg" alt="">
+            </div>
+            <div class="header__text">
+                <h1>TASTE</h1>
+                <div class="text">
+                    <span>ENGAGE</span>
+                    <span>IN</span>
+                    <span>ART</span>
+                </div>
+            </div>
+        </div>
+        <div class="main__nav">
+            <div class="main__nav__wrapper">
+                <a href="#home" >HOME</a>
+                <a href="#search">SEARCH</a>
+                <a href="#discover">DISCOVER</a>
+            </div>
+        </div>
+        <div id="pages">
+            <section class="home" id="home">
+                <div class="home__wrapper container"></div>
+            </section>
+            <section class="search" id="search">
+                <div class="search__wrapper"></div>
+            </section>
+            <section class="discover" id="discover">
+                <div class="discover__wrapper"></div>
+            </section>
+        </div>
+    </div>
+
+    <script id="template-home-page" type="text/x-handlebars-template">
+        {{#each songs}}
+        <div class="music__wrapper">
+            <div class="name">
+                <p>{{author}} - {{title}}</p>
+            </div>
+            <audio controls>
+                <source src="music/{{filename}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="music__description">
+                <div class="category">
+                    <p>Categories:{{#each categories}} {{this}} {{/each}}</p>
+                </div>
+                <div class="rank">
+                    <p>#{{ranking}} in the ranking</p>
+                </div>
+            </div>
+        </div>
+            {{/each}}
+        <div class="home__subscribe"></div>
+    </script>
+    <script id="template-discover-page" type="text/x-handlebars-template">
+
+    </script>
+    <script id="template-search-page" type="text/x-handlebars-template">
+        <div class="search__input">
+            <p>NAME</p>
+            <form class="search__form">
+                <input type="text" name="song_name" placeholder="Search here...">
+                <button type="submit" class="btn">SEARCH</button>
+            </form>
+        </div>
+        <div class="search__results">
+            {{#each songs}}
+                <div class="music__search__wrapper">
+                    <div class="name">
+                        <p>{{author}} - {{title}}</p>
+                    </div>
+                    <audio controls>
+                        <source src="music/{{filename}}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="music__description">
+                        <div class="category">
+                            <p>Categories:{{#each categories}} {{this}} {{/each}}</p>
+                        </div>
+                        <div class="rank">
+                            <p>#{{ranking}} in the ranking</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+
+    <script src="js/app.js" type="module"></script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+
+.music__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  > .name{
+    color: white;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  > audio{
+    width: 100%;
+  }
+  > .music__description{
+    width: 100%;
+  }
+}
+
+.music__description{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
