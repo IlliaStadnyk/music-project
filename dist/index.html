@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>X-MUSIC</title>
+</head>
+<body>
+    <div class="">
+        <div class="header__wrapper">
+            <div class="header__text">
+                <h1>TASTE</h1>
+                <div class="text">
+                    <span>ENGAGE</span>
+                    <span>IN</span>
+                    <span>ART</span>
+                </div>
+            </div>
+        </div>
+        <div class="main__nav">
+            <div class="main__nav__wrapper">
+                <a href="#home" >HOME</a>
+                <a href="#search">SEARCH</a>
+                <a href="#discover">DISCOVER</a>
+            </div>
+        </div>
+        <div id="pages">
+            <section class="home" id="home">
+                <div class="home__category__wrapper"></div>
+                <div class="home__wrapper container"></div>
+            </section>
+            <section class="search" id="search">
+                <div class="search__wrapper">
+                    <div class="search__input"></div>
+                    <div class="search__results_wrapper"></div>
+                </div>
+
+            </section>
+            <section class="discover" id="discover">
+                <div class="discover__wrapper"></div>
+            </section>
+            <section class="join-now" id="join-now"></section>
+        </div>
+        <div class="about">
+            <p>All rights reserved</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
+    <script id="template-home-page" type="text/x-handlebars-template">
+        <div class="home__music__wrapper">
+            {{#each songs}}
+                {{> music-item audioWrapper=../audioWrapper}}
+            {{/each}}
+        </div>
+        <div class="subscribe">
+            <div class="subscribe__wrapper">
+                <p>SUBSCRIBE <span>NOW</span></p>
+            </div>
+            <div class="subscribe__container">
+                <div class="subscribe__main">
+                    <div class="subscribe__button">
+                        <button class="subscribe__button__button" id="join-now">join now</button>
+                    </div>
+                    <div class="subscribe__artist">
+                        <img src="images/artist.jpg" alt="Dean Henson Album" class="album-cover">
+                        <div class="artist-name">
+                            <span class="name">Dean</span>
+                            <span class="surname">
+                             <span class="hen">Hen</span><span class="son">son</span>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="subscribe__footer"><p>NEW ALBUM</p><p>Available only for subscribers</p></div>
+
+            </div>
+        </div>
+    </script>
+    <script id="template-discover-page" type="text/x-handlebars-template">
+        <div class="discover__results">
+            {{#each songs}}
+                {{> music-item audioWrapper=../audioWrapper}}
+            {{/each}}
+        </div>
+    </script>
+    <script id="template-search-page" type="text/x-handlebars-template">
+        <div class="search__results">
+            {{#each songs}}
+                {{> music-item audioWrapper=../audioWrapper}}
+            {{/each}}
+        </div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script id="template-music-item" type="text/x-handlebars-template">
+        <div class="music__wrapper">
+            <div class="gap-example">
+                <p>{{name}} - {{title}}</p>
+            </div>
+            <div class="player_{{audioWrapper}}">
+                <audio id="{{id}}">
+                    <source src="music/{{filename}}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="music__description">
+                <p>Categories:
+                {{#each categories}}
+                    {{this}}{{#unless @last}},{{/unless}}
+                {{/each}}</p>
+                <p>#{{ranking}} in the ranking</p>
+            </div>
+        </div>
+    </script>
+    <script id="template-search-credentials" type="text/x-handlebars-template">
+        <div class="input__wrapper">
+            <div class="search__input__name">
+                <p>NAME</p>
+                <form class="search__form">
+                    <input type="text" class="input__"  name="song_name" placeholder="Search here...">
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        {{#each categories}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+
+                    </select>
+                    <button type="submit" class="btn">SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </script>
+    <script id="template-home-category" type="text/x-handlebars-template">
+        <div class="home__category__section">
+            <p class="home__category__list">Categories:
+                {{#each categories}}
+                <input type="checkbox" id="{{this}}" name="{{this}}" value="{{this}}" class="home__category__item">
+                    <label for="{{this}}">{{this}}</label>{{#unless @last}},{{/unless}}
+                {{/each}}
+            </p>
+        </div>
+    </script>
+    <script src="js/app.js" type="module"></script>
+
+</body>
+</html>
