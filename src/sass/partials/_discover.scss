@@ -1,5 +1,12 @@
+.discover__results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-a{
-  color: white;
-
+  > .music__wrapper {
+    display: flex;
+    width: 40%;
+  }
 }
+

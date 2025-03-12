@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <title>X-MUSIC</title>
@@ -13,9 +14,6 @@
 <body>
     <div class="">
         <div class="header__wrapper">
-            <div class="header__img__wrapper">
-                <img class="header__img" src="images/background.jpg" alt="">
-            </div>
             <div class="header__text">
                 <h1>TASTE</h1>
                 <div class="text">
@@ -34,74 +32,121 @@
         </div>
         <div id="pages">
             <section class="home" id="home">
+                <div class="home__category__wrapper"></div>
                 <div class="home__wrapper container"></div>
             </section>
             <section class="search" id="search">
-                <div class="search__wrapper"></div>
+                <div class="search__wrapper">
+                    <div class="search__input"></div>
+                    <div class="search__results_wrapper"></div>
+                </div>
+
             </section>
             <section class="discover" id="discover">
                 <div class="discover__wrapper"></div>
             </section>
+            <section class="join-now" id="join-now"></section>
+        </div>
+        <div class="about">
+            <p>All rights reserved</p>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
     <script id="template-home-page" type="text/x-handlebars-template">
-        {{#each songs}}
-        <div class="music__wrapper">
-            <div class="name">
-                <p>{{author}} - {{title}}</p>
+        <div class="home__music__wrapper">
+            {{#each songs}}
+                {{> music-item audioWrapper=../audioWrapper}}
+            {{/each}}
+        </div>
+        <div class="subscribe">
+            <div class="subscribe__wrapper">
+                <p>SUBSCRIBE <span>NOW</span></p>
             </div>
-            <audio controls>
-                <source src="music/{{filename}}" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <div class="music__description">
-                <div class="category">
-                    <p>Categories:{{#each categories}} {{this}} {{/each}}</p>
+            <div class="subscribe__container">
+                <div class="subscribe__main">
+                    <div class="subscribe__button">
+                        <button class="subscribe__button__button" id="join-now">join now</button>
+                    </div>
+                    <div class="subscribe__artist">
+                        <img src="images/artist.jpg" alt="Dean Henson Album" class="album-cover">
+                        <div class="artist-name">
+                            <span class="name">Dean</span>
+                            <span class="surname">
+                             <span class="hen">Hen</span><span class="son">son</span>
+                                </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="rank">
-                    <p>#{{ranking}} in the ranking</p>
-                </div>
+                <div class="subscribe__footer"><p>NEW ALBUM</p><p>Available only for subscribers</p></div>
+
             </div>
         </div>
-            {{/each}}
-        <div class="home__subscribe"></div>
     </script>
     <script id="template-discover-page" type="text/x-handlebars-template">
-
+        <div class="discover__results">
+            {{#each songs}}
+                {{> music-item audioWrapper=../audioWrapper}}
+            {{/each}}
+        </div>
     </script>
     <script id="template-search-page" type="text/x-handlebars-template">
-        <div class="search__input">
-            <p>NAME</p>
-            <form class="search__form">
-                <input type="text" name="song_name" placeholder="Search here...">
-                <button type="submit" class="btn">SEARCH</button>
-            </form>
-        </div>
         <div class="search__results">
             {{#each songs}}
-                <div class="music__search__wrapper">
-                    <div class="name">
-                        <p>{{author}} - {{title}}</p>
-                    </div>
-                    <audio controls>
-                        <source src="music/{{filename}}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="music__description">
-                        <div class="category">
-                            <p>Categories:{{#each categories}} {{this}} {{/each}}</p>
-                        </div>
-                        <div class="rank">
-                            <p>#{{ranking}} in the ranking</p>
-                        </div>
-                    </div>
-                </div>
+                {{> music-item audioWrapper=../audioWrapper}}
             {{/each}}
         </div>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script id="template-music-item" type="text/x-handlebars-template">
+        <div class="music__wrapper">
+            <div class="gap-example">
+                <p>{{name}} - {{title}}</p>
+            </div>
+            <div class="player_{{audioWrapper}}">
+                <audio id="{{id}}">
+                    <source src="music/{{filename}}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
+            <div class="music__description">
+                <p>Categories:
+                {{#each categories}}
+                    {{this}}{{#unless @last}},{{/unless}}
+                {{/each}}</p>
+                <p>#{{ranking}} in the ranking</p>
+            </div>
+        </div>
+    </script>
+    <script id="template-search-credentials" type="text/x-handlebars-template">
+        <div class="input__wrapper">
+            <div class="search__input__name">
+                <p>NAME</p>
+                <form class="search__form">
+                    <input type="text" class="input__"  name="song_name" placeholder="Search here...">
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        {{#each categories}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+
+                    </select>
+                    <button type="submit" class="btn">SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </script>
+    <script id="template-home-category" type="text/x-handlebars-template">
+        <div class="home__category__section">
+            <p class="home__category__list">Categories:
+                {{#each categories}}
+                <input type="checkbox" id="{{this}}" name="{{this}}" value="{{this}}" class="home__category__item">
+                    <label for="{{this}}">{{this}}</label>{{#unless @last}},{{/unless}}
+                {{/each}}
+            </p>
+        </div>
+    </script>
     <script src="js/app.js" type="module"></script>
 
 </body>

@@ -1,6 +1,9 @@
 import {select, classNames} from './setting.js'
 import Home from './components/Home.js';
 import Search from "./components/Search.js";
+import Discover from "./components/Discover.js";
+import SearchInput from "./components/SearchInput.js";
+import HomeCategory from "./components/HomeCategory.js";
 const app = {
     initPages(){
         const thisApp = this;
@@ -18,14 +21,14 @@ const app = {
         }
         thisApp.activatePage(pageMatchingHash);
         for (let item of thisApp.links) {
-            item.addEventListener("click", function(event) {
+            item.addEventListener("click", function (event) {
                 const clickedElement = this;
                 event.preventDefault();
-                const id = clickedElement.getAttribute("href").replace('#','');
+                const id = clickedElement.getAttribute("href").replace('#', '');
                 // console.log(id);
                 thisApp.activatePage(id);
                 // change URL hash
-                window.location.hash = '#/'+id;
+                window.location.hash = '#/' + id;
             })
         }
     },
@@ -43,7 +46,6 @@ const app = {
     initHome: function(){
         const thisApp = this;
         thisApp.homePage = document.querySelector(select.containerOf.homePage);
-        console.log('home',thisApp.homePage);
         new Home(thisApp.homePage);
     },
     initSearch: function(){
@@ -51,13 +53,39 @@ const app = {
         thisApp.searchPage = document.querySelector(select.containerOf.searchPage);
         new Search(thisApp.searchPage);
     },
-    initDiscover: function(){},
+    initSearchInput: function(){
+        const thisApp = this;
+        thisApp.searchInput = document.querySelector(select.containerOf.searchInput);
+        new SearchInput(thisApp.searchInput);
+    },
+    initDiscover: function(){
+        const thisApp = this;
+        thisApp.discoverPage = document.querySelector(select.containerOf.discoverPage);
+        new Discover(thisApp.discoverPage);
+
+    },
+    initHomeCategory(){
+        const thisApp = this;
+        thisApp.homeCategory = document.querySelector(select.containerOf.homeCategoryPage);
+        new HomeCategory(thisApp.homeCategory);
+    },
+    initActions(){
+        const thisApp = this;
+        document.querySelector(select.containerOf.homePage).addEventListener('join-now', (event) => {
+            const id = event.target.getAttribute('id');
+            thisApp.activatePage(id);
+            window.location.hash = '#/' + id;
+        })
+    },
     init: function(){
         const thisApp=this;
-        thisApp.initPages()
+        thisApp.initPages();
+        thisApp.initHomeCategory();
         thisApp.initHome();
+        thisApp.initSearchInput();
         thisApp.initSearch();
         thisApp.initDiscover();
+        thisApp.initActions()
     }
 }
 

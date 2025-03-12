@@ -1,0 +1,43 @@
+
+.music__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  > .name{
+    color: white;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  > audio{
+    width: 100%;
+  }
+  > .music__description{
+    width: 100%;
+  }
+}
+
+.music__description{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__music__wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.slider {
+  > .gap-progress {
+    background-color: $color-main;
+
+    > .pin {
+      background-color: $color-main;
+    }
+  }
+}
