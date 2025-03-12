@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2028f81-81d2-4f61-a511-10bff8e7beea" name="Changes" comment="v1">
-      <change afterPath="$PROJECT_DIR$/src/js/components/AppState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/components/HomeCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/components/SearchInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/partials/_global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/partials/_music.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/partials/_subscribe.scss" afterDir="false" />
+    <list default="true" id="d2028f81-81d2-4f61-a511-10bff8e7beea" name="Changes" comment="v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Audio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Discover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Discover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/setting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_discover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_discover.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/partials/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_search.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +108,7 @@
       <workItem from="1741517117635" duration="11106000" />
       <workItem from="1741617870837" duration="3755000" />
       <workItem from="1741713078729" duration="6475000" />
-      <workItem from="1741790239816" duration="5649000" />
+      <workItem from="1741790239816" duration="6280000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <option name="closed" value="true" />
@@ -136,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741013662377</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v2">
+      <option name="closed" value="true" />
+      <created>1741796218088</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741796218088</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +134,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1" />
+    <MESSAGE value="v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2" />
   </component>
 </project>
