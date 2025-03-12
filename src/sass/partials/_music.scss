@@ -18,8 +18,16 @@
   > .music__description{
     width: 100%;
   }
+
 }
 
+.green-audio-player .slider .gap-progress{
+  background-color: $color-main !important;
+}
+
+.pin{
+  background-color: $color-main !important;
+}
 .music__description{
   display: flex;
   justify-content: space-between;

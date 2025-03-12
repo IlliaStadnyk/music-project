@@ -15,6 +15,7 @@ class Home {
         const thisHome = this;
         const url = settings.db.url + '/' + settings.db.songs;
         console.log('url', url);
+
         fetch(url)
             .then(response => response.json())
             .then(songs => {
