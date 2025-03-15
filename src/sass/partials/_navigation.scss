@@ -18,3 +18,13 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .main__nav__wrapper{
+    > a{
+      padding: 0 20px 0 20px !important;
+    }
+  }
+
+
+}

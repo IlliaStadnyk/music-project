@@ -49,3 +49,12 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .music__wrapper{
+    width: 100% !important;
+  }
+  .green-audio-player{
+    width: 90% !important;
+  }
+}

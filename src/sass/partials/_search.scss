@@ -57,7 +57,10 @@ p {
   display: flex;
   align-items: center;
 }
-
+.search__name{
+  display: flex;
+  align-items: center;
+}
 .search__results{
   display: flex;
   flex-direction: column;
@@ -68,4 +71,12 @@ p {
     display: flex;
     width: 40%;
   }
+}
+
+@media (max-width: 675px) {
+  .search__form{
+    display: flex;
+    flex-direction: column;
+  }
+
 }

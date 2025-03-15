@@ -29,7 +29,7 @@ export const select={
         subscribeJoinButton:'.subscribe__button__button'
     },
     searchPage:{
-        searchForm: '.search__input__name .search__form',
+        searchForm: '.search__input__credentials .search__form',
         inputSearch: '.search__form input',
         selectSearch: '.search__form select',
         audio: 'audio',

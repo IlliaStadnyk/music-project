@@ -38,3 +38,44 @@
   width: 100%;
   display: block;
 }
+
+@media (max-width: 360px){
+  .header__wrapper{
+    > .header__text{
+      > h1{
+        font-size: 64px;
+        letter-spacing: 10px;
+      }
+    }
+  }
+}
+@media (max-width: 480px){
+  .header__wrapper{
+    > .header__text{
+      > h1{
+        font-size: 64px;
+        letter-spacing: 20px;
+      }
+    }
+  }
+}
+@media (min-width: 481px) and (max-width: 880px){
+  .header__wrapper{
+    > .header__text{
+      > h1{
+        font-size: 96px;
+        letter-spacing: 30px;
+      }
+    }
+  }
+}
+@media (min-width: 881px) and (max-width: 1280px){
+  .header__wrapper{
+    > .header__text{
+      > h1{
+        font-size: 128px;
+        letter-spacing: 40px;
+      }
+    }
+  }
+}

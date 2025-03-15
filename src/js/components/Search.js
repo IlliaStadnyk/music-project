@@ -25,6 +25,7 @@ class Search {
                 }
                 thisSearch.getAuthors();
             });
+
     }
     getAuthors(){
         const thisSearch = this;

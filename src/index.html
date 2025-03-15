@@ -121,17 +121,21 @@
     </script>
     <script id="template-search-credentials" type="text/x-handlebars-template">
         <div class="input__wrapper">
-            <div class="search__input__name">
-                <p>NAME</p>
+            <div class="search__input__credentials">
                 <form class="search__form">
-                    <input type="text" class="input__"  name="song_name" placeholder="Search here...">
-                    <label for="category">Category</label>
-                    <select name="category" id="category">
-                        {{#each categories}}
-                            <option value="{{this}}">{{this}}</option>
-                        {{/each}}
+                    <div class="search__name">
+                        <p>NAME</p>
+                        <input type="text" class="input__"  name="song_name" placeholder="Search here...">
+                    </div>
+                    <div class="search__category">
+                        <label for="category">Category</label>
+                        <select name="category" id="category">
+                            {{#each categories}}
+                                <option value="{{this}}">{{this}}</option>
+                            {{/each}}
 
-                    </select>
+                        </select>
+                    </div>
                     <button type="submit" class="btn">SEARCH</button>
                 </form>
             </div>
