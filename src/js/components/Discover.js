@@ -7,8 +7,7 @@ class Discover {
         thisDiscover.element = element;
         thisDiscover.audioWrapper = select.discoverPage.discoverAudio;
         thisDiscover.mostListenedCategory = appState.getMostListenedCategory();
-        // console.log(appState);
-        // console.log(thisDiscover.mostListenedCategory);
+
         thisDiscover.getData();
     }
     getData() {
@@ -22,7 +21,6 @@ class Discover {
                 if(thisDiscover.mostListenedCategory){
                     thisDiscover.songs = thisDiscover.songs.filter(song => song.categories.includes(thisDiscover.mostListenedCategory));
                 }
-                // console.log(thisDiscover.songs);
                 thisDiscover.getAuthors();
             });
     }
