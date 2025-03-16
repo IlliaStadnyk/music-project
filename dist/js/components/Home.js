@@ -1,55 +1,29 @@
-import {settings, templates, select} from '../setting.js'
+import {settings, templates, select, classNames} from '../setting.js'
 import Audio from "./Audio.js";
 import appState from "./AppState.js";
 class Home {
-    constructor(element) {
+    constructor(element, songs, authors) {
         const thisHome = this;
         thisHome.element = element;
+        thisHome.songs = songs;
+        thisHome.authors = authors;
         thisHome.audioWrapper = select.homePage.homeAudio;
         thisHome.categoryChecked = settings.category.all;
-        thisHome.getData();
-
+        thisHome.render();
+        thisHome.getElements();
+        thisHome.initAudio();
+        thisHome.initEventListeners();
+        thisHome.initActions()
     }
 
-    getData() {
-        const thisHome = this;
-        const url = settings.db.url + '/' + settings.db.songs;
-        console.log('url', url);
 
-        fetch(url)
-            .then(response => response.json())
-            .then(songs => {
-                thisHome.songs = songs;
-                if(thisHome.categoryChecked && thisHome.categoryChecked !== 'All'){
-                    thisHome.songs = thisHome.songs.filter(song =>
-                        song.categories.includes(thisHome.categoryChecked)
-                    );
-                }
-                thisHome.getAuthors()
-            });
-    }
-    getAuthors(){
-        const thisHome = this;
-        const urlAuthors = settings.db.url + '/'+settings.db.authors;
-        fetch(urlAuthors)
-            .then(r => r.json())
-            .then(authors => {
-                thisHome.authors = authors;
-                for(let song of thisHome.songs){
-                    let author = thisHome.authors.find(item => item.id === song.authorId);
-                    song.name = `${author.name} ${author.surname}`;
-                }
-                thisHome.render();
-                thisHome.getElements();
-                thisHome.initAudio();
-                thisHome.initEventListeners();
-                thisHome.initActions()
-            })
-    }
     render() {
         const thisHome = this;
         thisHome.dom = {};
         thisHome.dom.wrapper = thisHome.element;
+        for(let song of thisHome.songs){
+            let author = thisHome.authors.find(item => item.id === song.authorId);
+            song.name = `${author.name} ${author.surname}`}
 
         const generateHTML = templates.homePage({songs: thisHome.songs, audioWrapper: thisHome.audioWrapper});
         thisHome.dom.wrapper.innerHTML = generateHTML;
@@ -63,6 +37,8 @@ class Home {
         thisHome.dom.categoryWrapper = document.querySelector(select.homePage.categoryList);
         thisHome.dom.categorySelect = document.querySelectorAll(select.homePage.homeCategory);
         thisHome.dom.joinButton = thisHome.dom.wrapper.querySelector(select.homePage.subscribeJoinButton);
+        thisHome.dom.musicWrapper = thisHome.dom.wrapper.querySelectorAll(select.music.musicWrapper);
+        console.log(thisHome.dom.musicWrapper);
 
         thisHome.dom.joinButton.textContent = thisHome.dom.joinButton.textContent.toUpperCase();
     }
@@ -86,6 +62,22 @@ class Home {
             console.log("app:", appState);
         });
     }
+    renderByCategory(){
+        const thisHome = this;
+        for(const song of thisHome.dom.musicWrapper){
+            const categories = song.querySelector(select.music.songCategory);
+           if (thisHome.categoryChecked === settings.category.all){
+               song.classList.remove(classNames.song.hidden)
+           }else {
+               if(!categories.textContent.includes(thisHome.categoryChecked)){
+                   song.classList.add(classNames.song.hidden);
+               } else {
+                   song.classList.remove(classNames.song.hidden);
+               }
+           }
+
+        }
+    }
     initActions(){
         const thisHome = this;
         if(!thisHome.dom.categoryWrapper.dataset.listener){
@@ -103,7 +95,7 @@ class Home {
                         thisHome.categoryChecked = value;
                     }
                     console.log(thisHome.categoryChecked);
-                    thisHome.getData();
+                    thisHome.renderByCategory()
                 })
             }
         }

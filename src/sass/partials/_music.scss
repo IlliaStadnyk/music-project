@@ -50,6 +50,10 @@
   }
 }
 
+.hidden{
+  display: none !important;
+}
+
 @media (max-width: 480px) {
   .music__wrapper{
     width: 100% !important;

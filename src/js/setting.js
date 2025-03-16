@@ -37,6 +37,11 @@ export const select={
     },
     discoverPage:{
         discoverAudio: 'discoverAudio',
+    },
+    music:{
+        songName : '.gap-example p span',
+        musicWrapper: '.music__wrapper',
+        songCategory: '.music__description p',
     }
 }
 
@@ -49,6 +54,9 @@ export const classNames= {
     },
     pages: {
         active: 'active',
+    },
+    song:{
+      hidden: 'hidden',
     }
 }
 

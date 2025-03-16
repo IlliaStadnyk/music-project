@@ -1,10 +1,33 @@
-import {select, classNames} from './setting.js'
+import {select, classNames, settings} from './setting.js'
 import Home from './components/Home.js';
 import Search from "./components/Search.js";
 import Discover from "./components/Discover.js";
 import SearchInput from "./components/SearchInput.js";
 import HomeCategory from "./components/HomeCategory.js";
 const app = {
+    getData(){
+        const thisApp =this
+        const urlSongs = settings.db.url + '/' + settings.db.songs;
+        const urlAuthors = settings.db.url + '/'+settings.db.authors;
+
+        Promise.all([
+            fetch(urlSongs),
+            fetch(urlAuthors),
+        ])
+            .then(function(allResponse){
+                const songs = allResponse[0];
+                const authors = allResponse[1];
+                return Promise.all([
+                    songs.json(),
+                    authors.json(),
+                ]);
+            })
+            .then(function([songs, authors]){
+                thisApp.songs = songs;
+                thisApp.authors = authors;
+                thisApp.init();
+            })
+    },
     initPages(){
         const thisApp = this;
         thisApp.pages = document.querySelector(select.containerOf.pages).children;
@@ -46,17 +69,17 @@ const app = {
     initHome: function(){
         const thisApp = this;
         thisApp.homePage = document.querySelector(select.containerOf.homePage);
-        new Home(thisApp.homePage);
+        new Home(thisApp.homePage ,thisApp.songs, thisApp.authors);
     },
     initSearch: function(){
         const thisApp = this;
         thisApp.searchPage = document.querySelector(select.containerOf.searchPage);
-        new Search(thisApp.searchPage);
+        new Search(thisApp.searchPage, thisApp.songs, thisApp.authors);
     },
     initSearchInput: function(){
         const thisApp = this;
         thisApp.searchInput = document.querySelector(select.containerOf.searchInput);
-        new SearchInput(thisApp.searchInput);
+        new SearchInput(thisApp.searchInput, thisApp.songs);
     },
     initDiscover: function(){
         const thisApp = this;
@@ -67,7 +90,7 @@ const app = {
     initHomeCategory(){
         const thisApp = this;
         thisApp.homeCategory = document.querySelector(select.containerOf.homeCategoryPage);
-        new HomeCategory(thisApp.homeCategory);
+        new HomeCategory(thisApp.homeCategory, thisApp.songs);
     },
     initActions(){
         const thisApp = this;
@@ -89,4 +112,4 @@ const app = {
     }
 }
 
-app.init();
+app.getData();

@@ -1,23 +1,13 @@
-import {settings, templates} from "../setting.js";
+import {templates} from "../setting.js";
 
 class SearchInput{
-    constructor(element){
+    constructor(element, songs){
         const thisSearchInput = this;
         thisSearchInput.element = element;
+        thisSearchInput.songs = songs;
         thisSearchInput.categories =['All'];
-        thisSearchInput.getData();
-    }
-    getData(){
-        const thisSearchInput = this;
-        const urlSongs = settings.db.url + '/' + settings.db.songs;
-        fetch(urlSongs)
-            .then(response => response.json())
-            .then(songs => {
-                thisSearchInput.songs = songs;
-                // console.log(songs);
-                thisSearchInput.prepareCategories();
-                thisSearchInput.render();
-            });
+        thisSearchInput.prepareCategories();
+        thisSearchInput.render();
     }
     prepareCategories(){
         const thisSearchInput = this;

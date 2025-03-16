@@ -4,25 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2028f81-81d2-4f61-a511-10bff8e7beea" name="Changes" comment="v2.5 link">
+    <list default="true" id="d2028f81-81d2-4f61-a511-10bff8e7beea" name="Changes" comment="v2.5 rwd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/components/AppState.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/components/AppState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/components/HomeCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/components/HomeCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/js/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/components/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/components/SearchInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/components/SearchInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/js/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/setting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/AppState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/AppState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/HomeCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/HomeCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/SearchInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/SearchInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/setting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/partials/_music.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_music.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_search.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/partials/_subscribe.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/partials/_subscribe.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,8 @@
       <workItem from="1741617870837" duration="3755000" />
       <workItem from="1741713078729" duration="6475000" />
       <workItem from="1741790239816" duration="16252000" />
-      <workItem from="1742045096565" duration="7428000" />
+      <workItem from="1742045096565" duration="9250000" />
+      <workItem from="1742113187806" duration="5438000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <option name="closed" value="true" />
@@ -191,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741802143351</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v2.5 rwd">
+      <option name="closed" value="true" />
+      <created>1742053506719</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742053506719</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +215,7 @@
     <MESSAGE value="v2.4" />
     <MESSAGE value="v2.5" />
     <MESSAGE value="v2.5 link" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.5 link" />
+    <MESSAGE value="v2.5 rwd" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2.5 rwd" />
   </component>
 </project>
